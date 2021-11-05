@@ -1,3 +1,9 @@
+function Checkout() {
+  this.pizzas = {};
+  this.pizzaCount = 0;
+  this.totalCost = 0;
+}
+
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
