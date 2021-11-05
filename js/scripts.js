@@ -15,3 +15,17 @@ Pizza.prototype.costCalculator = function() {
   this.cost += (this.toppings.length * 2);
 };
 
+$(document).ready(function() {
+  $("form#pizza").submit(function(event) {
+    event.preventDefault();
+    const size = $("#size").val();
+    let toppings = [];
+    toppings = $("input[name='toppings']:checked").map(function() {
+      return $(this).val();
+    }).toArray();
+    console.log(typeof toppings);
+    let newPizza = new Pizza();
+
+
+  });
+}); 
