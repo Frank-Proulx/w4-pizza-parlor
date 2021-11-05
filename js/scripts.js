@@ -4,6 +4,12 @@ function Checkout() {
   this.totalCost = 0;
 }
 
+Checkout.prototype.addPizza = function(pizza) {
+  this.pizzaCount += 1;
+  this.pizzas[this.pizzaCount] = pizza;
+  this.totalCost += pizza.cost;
+}
+
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
@@ -24,6 +30,7 @@ Pizza.prototype.costCalculator = function() {
 };
 
 $(document).ready(function() {
+  let checkout = new Checkout();
   $("form#pizza").submit(function(event) {
     event.preventDefault();
     const size = $("#size").val();
@@ -32,6 +39,7 @@ $(document).ready(function() {
       return $(this).val();
     }).toArray();
     let newPizza = new Pizza(size, toppings);
+    checkout.addPizza(newPizza);
     const costMessage = "Thanks for ordering! You're pizza will be $";
     $("#cost").text(costMessage + newPizza.cost);
 
