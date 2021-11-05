@@ -18,9 +18,9 @@ function Pizza(size, toppings) {
 
 Pizza.prototype.costCalculator = function() {
   let cost = 0;
-  if (this.size === "small") {
+  if (this.size === "Small") {
     cost = 12;
-  } else if (this.size === "medium") {
+  } else if (this.size === "Medium") {
     cost = 15;
   } else {
     cost = 18;
@@ -43,6 +43,11 @@ $(document).ready(function() {
     console.log(checkout);
     $("input[name='toppings']:checked").prop('checked', false);
     $("#size").prop('selectedIndex', 0);
+    console.log(checkout.pizzas[1].size);
+    $("#itemized").empty();
+    for (let i = 1; i <= checkout.pizzaCount; i++) {
+      $("#itemized").append("<p>" + checkout.pizzas[i].size + " pizza - " + checkout.pizzas[i].toppings.join(", ") + "<span id=" + i + "> - remove</span></p>");
+    }
     const costMessage = "Thanks for ordering! Your total will be $";
     $("#cost").text(costMessage + checkout.totalCost);
 
