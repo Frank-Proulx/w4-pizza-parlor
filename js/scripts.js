@@ -57,9 +57,13 @@ $(document).ready(function() {
     $("input[name='toppings']:checked").prop('checked', false);
     $("#size").prop('selectedIndex', 0);
     refreshDisplay();
+    $("#cost").show();
   });
   $("#itemized").on("click", ".pizzas", function() {
     checkout.deletePizza(this.id);
     refreshDisplay();
+    if (checkout.totalCost === 0) {
+      $("#cost").hide();
+    }
   });  
 }); 

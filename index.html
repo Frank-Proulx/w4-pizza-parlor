@@ -2,66 +2,80 @@
 <html lang="en-US">
 <head>
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/scripts.js"></script>
   <title>Francesco's Pizza</title>
 </head>
 <body>
+  <div class="column1"></div>
+  <div class="column2"></div>
   <div class="container">
     <h1>Francesco's Pizza Parlor</h1>
-    <form id="pizza">
-      <div class="form-group">
-        <label for="size">What size pizza would you like?</label>
-        <select class="form-control" id="size">
-          <option value="Small" selected>Small Pizza</option>
-          <option value="Medium">Medium Pizza</option>
-          <option value="Large">Large Pizza</option>
-        </select>
+    <div class="row">
+      <div class="col-md-8">
+        <form id="pizza">
+          <div class="form-group">
+            <label for="size" class="choose">Select your size</label>
+            <select class="form-control" id="size">
+              <option value="Small" selected>Small Pizza</option>
+              <option value="Medium">Medium Pizza</option>
+              <option value="Large">Large Pizza</option>
+            </select>
+          </div>
+          <p class="choose">Choose your toppings</p>
+          <p>$2 per topping</p>
+          <div class="form-group">
+            <input type="checkbox" id="extra-cheese" name="toppings" value="Extra Cheese">
+            <label for="extra-cheese">Extra Cheese</label>
+            <input type="checkbox" id="pepperoni" name="toppings" value="Pepperoni">
+            <label for="pepperoni">Pepperoni</label>
+            <input type="checkbox" id="sausage" name="toppings" value="Sausage">
+            <label for="sausage">Sausage</label>
+            <br>
+            <input type="checkbox" id="black-olives" name="toppings" value="Black Olives">
+            <label for="black-olives">Black Olives</label>
+            <input type="checkbox" id="green-peppers" name="toppings" value="Green Peppers">
+            <label for="green-peppers">Green Peppers</label>
+            <input type="checkbox" id="fresh-garlic" name="toppings" value="Fresh Garlic">
+            <label for="fresh-garlic">Fresh Garlic</label>
+            <br>
+            <input type="checkbox" id="fresh-basil" name="toppings" value="Fresh Basil">
+            <label for="fresh-basil">Fresh Basil</label>
+            <input type="checkbox" id="tomato" name="toppings" value="Tomato">
+            <label for="tomato">Tomato</label>
+            <input type="checkbox" id="ham" name="toppings" value="Ham">
+            <label for="ham">Ham</label>
+            <br>
+            <input type="checkbox" id="pineapple" name="toppings" value="Pineapple">
+            <label for="pineapple">Pineapple</label>
+            <input type="checkbox" id="sliced-meatballs" name="toppings" value="Sliced Meatballs">
+            <label for="sliced-meatballs">Sliced Meatballs</label>
+            <input type="checkbox" id="ricotta" name="toppings" value="Ricotta">
+            <label for="ricotta">Ricotta</label>
+            <br>
+            <input type="checkbox" id="jalapenos" name="toppings" value="Jalapenos">
+            <label for="jalapenos">Jalapenos</label>
+            <input type="checkbox" id="bacon" name="toppings" value="Bacon">
+            <label for="bacon">Bacon</label>
+            <input type="checkbox" id="artichoke" name="toppings" value="Artichoke">
+            <label for="artichoke">Artichoke</label>
+          </div>
+          <button type="submit" class="btn btn-success">UPDATE CART</button>
+        </form>
       </div>
-      <p>Choose your toppings</p>
-      <p>$2 per topping</p>
-      <div class="form-group">
-        <input type="checkbox" id="extra-cheese" name="toppings" value="Extra Cheese">
-        <label for="extra-cheese">Extra Cheese</label>
-        <input type="checkbox" id="pepperoni" name="toppings" value="Pepperoni">
-        <label for="pepperoni">Pepperoni</label>
-        <input type="checkbox" id="sausage" name="toppings" value="Sausage">
-        <label for="sausage">Sausage</label>
-        <input type="checkbox" id="black-olives" name="toppings" value="Black Olives">
-        <label for="black-olives">Black Olives</label>
-        <input type="checkbox" id="green-peppers" name="toppings" value="Green Peppers">
-        <label for="green-peppers">Green Peppers</label>
-        <br>
-        <input type="checkbox" id="fresh-garlic" name="toppings" value="Fresh Garlic">
-        <label for="fresh-garlic">Fresh Garlic</label>
-        <input type="checkbox" id="fresh-basil" name="toppings" value="Fresh Basil">
-        <label for="fresh-basil">Fresh Basil</label>
-        <input type="checkbox" id="tomato" name="toppings" value="Tomato">
-        <label for="tomato">Tomato</label>
-        <input type="checkbox" id="ham" name="toppings" value="Ham">
-        <label for="ham">Ham</label>
-        <input type="checkbox" id="pineapple" name="toppings" value="Pineapple">
-        <label for="pineapple">Pineapple</label>
-        <br>
-        <input type="checkbox" id="sliced-meatballs" name="toppings" value="Sliced Meatballs">
-        <label for="sliced-meatballs">Sliced Meatballs</label>
-        <input type="checkbox" id="ricotta" name="toppings" value="Ricotta">
-        <label for="ricotta">Ricotta</label>
-        <input type="checkbox" id="jalapenos" name="toppings" value="Jalapenos">
-        <label for="jalapenos">Jalapenos</label>
-        <input type="checkbox" id="bacon" name="toppings" value="Bacon">
-        <label for="bacon">Bacon</label>
-        <input type="checkbox" id="artichoke" name="toppings" value="Artichoke">
-        <label for="artichoke">Artichoke</label>
-      </div>
-      <button type="submit" class="btn btn-success">Order</button>
-    </form>
-    <div id="itemized">
+      <div class="col-md-4">
+        <div id="itemized">
 
+        </div>
+        <hr>
+        <p id="cost"></p>
+        <a href="checkout.html" target="_self">
+          <button id="confirm-order" class="btn btn-success">CONFIRM ORDER</button>
+        </a>
+      </div>
     </div>
-    <hr>
-    <p id="cost"></p>
   </div>
 </body>
 </html>
