@@ -34,10 +34,17 @@ Pizza.prototype.costCalculator = function() {
   return cost;
 };
 
+function refreshDisplay() {
+  $("#itemized").empty();
+  const costMessage = "Thanks for ordering! Your total will be $";
+  $("#cost").text(costMessage + checkout.totalCost);
+  Object.keys(checkout.pizzas).forEach(function(key) {
+    $("#itemized").append("<p>" + checkout.pizzas[key].size + " pizza - " + checkout.pizzas[key].toppings.join(", ") + "<span id=" + key + " class='pizzas'> - remove</span></p>");
+  });
+}
 
-
+let checkout = new Checkout();
 $(document).ready(function() {
-  let checkout = new Checkout();
   $("form#pizza").submit(function(event) {
     event.preventDefault();
     const size = $("#size").val();
@@ -49,25 +56,10 @@ $(document).ready(function() {
     checkout.addPizza(newPizza);
     $("input[name='toppings']:checked").prop('checked', false);
     $("#size").prop('selectedIndex', 0);
-    $("#itemized").empty();
-    const costMessage = "Thanks for ordering! Your total will be $";
-    $("#cost").text(costMessage + checkout.totalCost);
-    console.log(checkout);
-    Object.keys(checkout.pizzas).forEach(function(key) {
-      $("#itemized").append("<p>" + checkout.pizzas[key].size + " pizza - " + checkout.pizzas[key].toppings.join(", ") + "<span id=" + key + " class='pizzas'> - remove</span></p>");
-    });
+    refreshDisplay();
   });
   $("#itemized").on("click", ".pizzas", function() {
     checkout.deletePizza(this.id);
-    $("#itemized").empty();
-    Object.keys(checkout.pizzas).forEach(function(key) {
-      $("#itemized").append("<p>" + checkout.pizzas[key].size + " pizza - " + checkout.pizzas[key].toppings.join(", ") + "<span id=" + key + " class='pizzas'> - remove</span></p>");
-    });
-    $("#cost").empty();
-    const costMessage = "Thanks for ordering! Your total will be $";
-    $("#cost").text(costMessage + checkout.totalCost);
-  });
-  console.log(checkout);
-  
-
+    refreshDisplay();
+  });  
 }); 

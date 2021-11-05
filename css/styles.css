@@ -6,3 +6,11 @@ span:hover {
   cursor: pointer;
   color: rgb(157, 157, 207);
 }
+
+form {
+  margin-bottom: 25px;
+}
+
+#itemized {
+  min-height: 100px;
+}
