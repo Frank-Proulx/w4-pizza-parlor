@@ -52,6 +52,14 @@ Describe Pizza.prototype.costCalculator()
 Test: "It should take the length of the array containing the toppings in the toppings property of the pizza object, and the size value, and add cost depending on the number of elements and size chosen"  
 Code:  
 onst myPizza = new Pizza("large", ["bacon", "jalapenos", "pineapple"]);  
+myPizza.costCalculator();  
 myPizza.cost;  
 Expected Output: 24  
+
+Describe Checkout()
+
+Test: "It should return a Checkout object with three properties, pizzas (an empty object), pizzaCount (assigned a value of 0 at creation), and totalCost (assigned a value of 0 at creation)
+Code:
+let checkout = new Checkout();
+Expected Output: Checkout { pizzas: {}, pizzaCount: 0, totalCost: 0}
 
