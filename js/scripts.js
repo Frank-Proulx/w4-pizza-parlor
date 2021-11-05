@@ -1,18 +1,20 @@
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
-  this.cost = 0;
+  this.cost = this.costCalculator();
 }
 
 Pizza.prototype.costCalculator = function() {
+  let cost = 0;
   if (this.size === "small") {
-    this.cost += 12;
+    cost = 12;
   } else if (this.size === "medium") {
-    this.cost += 15;
+    cost = 15;
   } else {
-    this.cost += 18;
+    cost = 18;
   }
-  this.cost += (this.toppings.length * 2);
+  cost += (this.toppings.length * 2);
+  return cost;
 };
 
 $(document).ready(function() {
@@ -24,9 +26,8 @@ $(document).ready(function() {
       return $(this).val();
     }).toArray();
     let newPizza = new Pizza(size, toppings);
-    newPizza.costCalculator();
     const costMessage = "Thanks for ordering! You're pizza will be $";
     $("#cost").text(costMessage + newPizza.cost);
-    
+
   });
 }); 
