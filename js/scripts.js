@@ -23,9 +23,10 @@ $(document).ready(function() {
     toppings = $("input[name='toppings']:checked").map(function() {
       return $(this).val();
     }).toArray();
-    console.log(typeof toppings);
-    let newPizza = new Pizza();
-
-
+    let newPizza = new Pizza(size, toppings);
+    newPizza.costCalculator();
+    const costMessage = "Thanks for ordering! You're pizza will be $";
+    $("#cost").text(costMessage + newPizza.cost);
+    
   });
 }); 
