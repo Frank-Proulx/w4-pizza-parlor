@@ -40,8 +40,12 @@ $(document).ready(function() {
     }).toArray();
     let newPizza = new Pizza(size, toppings);
     checkout.addPizza(newPizza);
-    const costMessage = "Thanks for ordering! You're pizza will be $";
-    $("#cost").text(costMessage + newPizza.cost);
+    console.log(checkout);
+    $("input[name='toppings']:checked").prop('checked', false);
+    $("#size").prop('selectedIndex', 0);
+    const costMessage = "Thanks for ordering! Your total will be $";
+    $("#cost").text(costMessage + checkout.totalCost);
+
 
   });
 }); 
