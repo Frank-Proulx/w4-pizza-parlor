@@ -47,7 +47,7 @@ Code:
 const myPizza = new Pizza("large", ["bacon", "jalapenos", "pineapple"]);  
 Expected Ouput: Pizza {size: "large", toppings: ["bacon", "jalapenos", "pineapple"], cost: this.cost()}  
 
-Describe Pizza.prototype.cost()  
+Describe Pizza.prototype.costCalculator()  
 
 Test: "It should take the contents of the array containing the toppings in the toppings property of the pizza object, and the size value, and add cost depending on the number of elements and size chosen"  
 Code:  
