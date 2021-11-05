@@ -14,3 +14,4 @@ Pizza.prototype.costCalculator = function() {
   }
   this.cost += (this.toppings.length * 2);
 };
+

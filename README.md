@@ -49,9 +49,9 @@ Expected Ouput: Pizza {size: "large", toppings: ["bacon", "jalapenos", "pineappl
 
 Describe Pizza.prototype.costCalculator()  
 
-Test: "It should take the contents of the array containing the toppings in the toppings property of the pizza object, and the size value, and add cost depending on the number of elements and size chosen"  
+Test: "It should take the length of the array containing the toppings in the toppings property of the pizza object, and the size value, and add cost depending on the number of elements and size chosen"  
 Code:  
 onst myPizza = new Pizza("large", ["bacon", "jalapenos", "pineapple"]);  
 myPizza.cost;  
-Expected Output: 18  
+Expected Output: 24  
 
