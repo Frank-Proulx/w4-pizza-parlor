@@ -1,0 +1,8 @@
+span {
+  color: blue;
+}
+
+span:hover {
+  cursor: pointer;
+  color: rgb(157, 157, 207);
+}

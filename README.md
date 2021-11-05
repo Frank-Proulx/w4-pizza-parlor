@@ -65,9 +65,21 @@ Expected Output: Checkout { pizzas: {}, pizzaCount: 0, totalCost: 0}
 
 Describe Checkout.prototype.addPizza()
 
-Test: "It should track the total number of pizzas ordered, and it should add each new pizza to the pizzas object in checkout, with a property equal to the number of the order in which it was created. It should add the cost of each pizza to checkout.totalCost as a running tally"  
+Test: "It should increment the total number of pizzas ordered by 1, and it should add each new pizza to the pizzas object in checkout, with a property equal to the number of the order in which it was created. It should add the cost of each pizza to checkout.totalCost as a running tally"  
 Code:  
 let checkout = new Checkout();  
 const myPizza = new Pizza("large", ["bacon", "jalapenos", "pineapple"]);  
-checkout;
+checkout.addPizza(myPizza);  
+Expected Output: Checkout { pizzas: {1: size: "large", toppings: ["bacon", "jalapenos", "pineapple"], cost: 24}, pizzaCount: 1, totalCost: 24 }
+
+Describe Checkout.prototype.deletePizza()
+
+Test: "It should delete a pizza from the checkout object and also decrease the checkout object's totalCost by the cost of the deleted pizza"
+Code:
+let checkout = new Checkout();  
+const myPizza = new Pizza("Large", ["bacon", "jalapenos", "pineapple"]);  
+const myPizza2 = new Pizza("Medium", ["tomato", "bacon"]);
+checkout.addPizza(myPizza);  
+checkout.addPizza(myPizza2);  
+checkout.deletePizza(myPizza2);
 Expected Output: Checkout { pizzas: {1: size: "large", toppings: ["bacon", "jalapenos", "pineapple"], cost: 24}, pizzaCount: 1, totalCost: 24 }

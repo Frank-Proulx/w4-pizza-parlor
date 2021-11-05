@@ -8,7 +8,12 @@ Checkout.prototype.addPizza = function(pizza) {
   this.pizzaCount += 1;
   this.pizzas[this.pizzaCount] = pizza;
   this.totalCost += pizza.cost;
-}
+};
+
+Checkout.prototype.deletePizza = function(pizzaCount) {
+  this.totalCost -= this.pizzas[pizzaCount].cost;
+  delete this.pizzas[pizzaCount];
+};
 
 function Pizza(size, toppings) {
   this.size = size;
@@ -29,6 +34,8 @@ Pizza.prototype.costCalculator = function() {
   return cost;
 };
 
+
+
 $(document).ready(function() {
   let checkout = new Checkout();
   $("form#pizza").submit(function(event) {
@@ -40,17 +47,27 @@ $(document).ready(function() {
     }).toArray();
     let newPizza = new Pizza(size, toppings);
     checkout.addPizza(newPizza);
-    console.log(checkout);
     $("input[name='toppings']:checked").prop('checked', false);
     $("#size").prop('selectedIndex', 0);
-    console.log(checkout.pizzas[1].size);
     $("#itemized").empty();
-    for (let i = 1; i <= checkout.pizzaCount; i++) {
-      $("#itemized").append("<p>" + checkout.pizzas[i].size + " pizza - " + checkout.pizzas[i].toppings.join(", ") + "<span id=" + i + "> - remove</span></p>");
-    }
     const costMessage = "Thanks for ordering! Your total will be $";
     $("#cost").text(costMessage + checkout.totalCost);
-
-
+    console.log(checkout);
+    Object.keys(checkout.pizzas).forEach(function(key) {
+      $("#itemized").append("<p>" + checkout.pizzas[key].size + " pizza - " + checkout.pizzas[key].toppings.join(", ") + "<span id=" + key + " class='pizzas'> - remove</span></p>");
+    });
   });
+  $("#itemized").on("click", ".pizzas", function() {
+    checkout.deletePizza(this.id);
+    $("#itemized").empty();
+    Object.keys(checkout.pizzas).forEach(function(key) {
+      $("#itemized").append("<p>" + checkout.pizzas[key].size + " pizza - " + checkout.pizzas[key].toppings.join(", ") + "<span id=" + key + " class='pizzas'> - remove</span></p>");
+    });
+    $("#cost").empty();
+    const costMessage = "Thanks for ordering! Your total will be $";
+    $("#cost").text(costMessage + checkout.totalCost);
+  });
+  console.log(checkout);
+  
+
 }); 
