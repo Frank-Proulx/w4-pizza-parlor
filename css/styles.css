@@ -1,12 +1,14 @@
 body{
   font-family: 'Open Sans', sans-serif;
-  
+
 }
 
 h1 {
   font-family: 'Lobster', cursive;
-  padding-top: 60px;
-  font-size: 70px;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  color: white;
 }
 
 span {
@@ -28,10 +30,6 @@ form {
   margin-bottom: 25px;
 }
 
-#itemized {
-  min-height: 100px;
-}
-
 #pizza, hr {
   width: 50%;
   margin-left: 0;
@@ -39,23 +37,53 @@ form {
 
 hr {
   background-color: black;
+  width: 80%;
 }
 
 .column1, .column2 {
   background-color: #C20A0A;
-  width: 200px;
+  width: 8%;
   height: 100vh;
   position: absolute;
+  z-index: -2;
 }
 
 .column2 {
   right: 0;
 }
 
+.banner {
+  height: 125px;
+  width: 100%;
+  background-color: green;
+  position: absolute;
+  z-index: -1;
+}
+
 #thanks {
-  padding-top: 300px;
+  padding-top: 240px;
   text-align: center;
   font-size: 75px;
+  color: black;
 }
-/* font-family: 'Lobster', cursive;
-font-family: 'Open Sans', sans-serif; */
+
+img {
+  width: 700px;
+  height: auto;
+  position: absolute;
+  top: 30px;
+  left: 28%;
+}
+
+#confirm-box {
+  display: none;
+  margin: 20px auto;
+}
+
+p {
+  margin: 5px;
+}
+
+#cost {
+  padding-bottom: 10px;
+}

@@ -36,7 +36,7 @@ Pizza.prototype.costCalculator = function() {
 
 function refreshDisplay() {
   $("#itemized").empty();
-  const costMessage = "Thanks for ordering! Your total will be $";
+  const costMessage = "Total: $";
   $("#cost").text(costMessage + checkout.totalCost);
   Object.keys(checkout.pizzas).forEach(function(key) {
     $("#itemized").append("<p>" + checkout.pizzas[key].size + " pizza - " + checkout.pizzas[key].toppings.join(", ") + "<span id=" + key + " class='pizzas'> - remove</span></p>");
@@ -57,13 +57,13 @@ $(document).ready(function() {
     $("input[name='toppings']:checked").prop('checked', false);
     $("#size").prop('selectedIndex', 0);
     refreshDisplay();
-    $("#cost").show();
+    $("#confirm-box").show();
   });
   $("#itemized").on("click", ".pizzas", function() {
     checkout.deletePizza(this.id);
     refreshDisplay();
     if (checkout.totalCost === 0) {
-      $("#cost").hide();
+      $("#confirm-box").hide();
     }
   });  
 }); 
