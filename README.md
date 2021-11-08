@@ -2,7 +2,7 @@
 
 #### By Frank Proulx
 
-#### _{Brief description of application}_
+#### A website for ordering pizzas from Mewsy's Pizza Parlor
 
 ## Technologies Used
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+A Website where you can add pizzas by size and with toppings, getting a running tally with display of the pizzas you've ordered. You can click remove to delete them from your cart, and then checkout.
 
 ## Setup/Installation Requirements
 
@@ -27,8 +27,7 @@ _{This is a detailed description of your application. Give as much detail as nee
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+No known bugs  
 
 ## License
 

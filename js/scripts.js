@@ -39,7 +39,7 @@ function refreshDisplay() {
   const costMessage = "Total: $";
   $("#cost").text(costMessage + checkout.totalCost);
   Object.keys(checkout.pizzas).forEach(function(key) {
-    $("#itemized").append("<p>" + checkout.pizzas[key].size + " pizza - " + checkout.pizzas[key].toppings.join(", ") + "<span id=" + key + " class='pizzas'> - remove</span></p>");
+    $("#itemized").append("<p>" + checkout.pizzas[key].size + " pizza - " + checkout.pizzas[key].toppings.join(", ") + " - $" + checkout.pizzas[key].cost + "<span id=" + key + " class='pizzas'> - [X]</span></p>");
   });
 }
 

@@ -1,5 +1,6 @@
 body{
   font-family: 'Open Sans', sans-serif;
+  height: 100%;
 
 }
 
@@ -12,7 +13,7 @@ h1 {
 }
 
 span {
-  color: blue;
+  color: red;
 }
 
 span:hover {
@@ -31,7 +32,7 @@ form {
 }
 
 #pizza, hr {
-  width: 50%;
+  width: 75%;
   margin-left: 0;
 }
 
@@ -68,11 +69,11 @@ hr {
 }
 
 img {
-  width: 700px;
+  width: 300px;
   height: auto;
   position: absolute;
-  top: 30px;
-  left: 28%;
+  top: 380px;
+  left: 35%;
 }
 
 #confirm-box {
@@ -86,4 +87,8 @@ p {
 
 #cost {
   padding-bottom: 10px;
+}
+
+.form-group {
+  margin-top: 10px;
 }
